@@ -6,7 +6,7 @@ function Hero() {
     return (
         <main
             id="home"
-            className="grid min-h-screen place-items-center bg-black px-5 pt-32 pb-20 text-white sm:px-8"
+            className="grid min-h-[760px] place-items-center bg-black px-5 pt-32 pb-8 text-white sm:px-8"
         >
             <section className="mx-auto flex max-w-[920px] flex-col items-center text-center">
                 <div className="mb-7 inline-flex items-center gap-2 border border-white/10 bg-white/5 px-3 py-1.5 text-base text-white/60 shadow-[0_10px_30px_rgba(255,255,255,0.03)]">

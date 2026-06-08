@@ -1,6 +1,7 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import TrustedBrands from "./components/TrustedBrands";
 
 function App() {
     return (
@@ -10,6 +11,9 @@ function App() {
 
             {/* Hero */}
             <Hero />
+
+            {/* Trusted Brands */}
+            <TrustedBrands />
 
             {/* Footer */}
             <Footer />
