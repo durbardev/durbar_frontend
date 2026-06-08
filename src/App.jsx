@@ -1,16 +1,18 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Hero from "./components/Hero";
 
 function App() {
     return (
-        <div className="flex min-h-[200vh] flex-col">
+        <div className="flex min-h-screen flex-col">
             {/* Header */}
             <Header />
 
+            {/* Hero */}
+            <Hero />
+
             {/* Footer */}
-            <div className="mt-auto">
-                <Footer />
-            </div>
+            <Footer />
         </div>
     );
 }
