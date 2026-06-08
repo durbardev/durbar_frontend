@@ -11,6 +11,6 @@
     }
 
     body {
-        @apply m-0 min-h-[200vh] min-w-80 bg-[#151515] font-sans text-base text-white antialiased;
+        @apply m-0 min-h-screen min-w-80 bg-[#151515] font-sans text-base text-white antialiased;
     }
 }
