@@ -1,6 +1,7 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import Process from "./components/Process";
 import Services from "./components/Services";
 import TrustedBrands from "./components/TrustedBrands";
 
@@ -15,6 +16,9 @@ function App() {
 
             {/* Trusted Brands */}
             <TrustedBrands />
+
+            {/* Process */}
+            <Process />
 
             {/* Services */}
             <Services />
