@@ -1,6 +1,7 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import Portfolio from "./components/Portfolio";
 import Process from "./components/Process";
 import Services from "./components/Services";
 import TrustedBrands from "./components/TrustedBrands";
@@ -22,6 +23,9 @@ function App() {
 
             {/* Services */}
             <Services />
+
+            {/* Portfolio */}
+            <Portfolio />
 
             {/* Footer */}
             <Footer />
