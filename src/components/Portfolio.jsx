@@ -1,5 +1,4 @@
 import portfolio from "../data/portfolio";
-import PrimaryButton from "./PrimaryButton";
 
 function BrowserMockup() {
     return (
@@ -165,10 +164,6 @@ function Portfolio() {
                         <ProjectCard project={portfolio.projects[4]} height={350} />
                         <ProjectCard project={portfolio.projects[5]} height={440} />
                     </div>
-                </div>
-
-                <div className="mt-10 flex justify-center">
-                    <PrimaryButton href="#work">Load more projects</PrimaryButton>
                 </div>
             </div>
         </section>

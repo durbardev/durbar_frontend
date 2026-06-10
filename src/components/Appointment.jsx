@@ -1,4 +1,5 @@
 import identity from "../data/identity";
+import Button from "./Button";
 
 const fieldClass =
     "min-h-13 w-full border border-white/10 bg-white/[0.035] px-4 text-base text-white outline-none transition-colors placeholder:text-white/25 focus:border-red-600";
@@ -39,7 +40,7 @@ function Appointment() {
                                 <span className="h-px w-8 bg-white/70" />
                                 Let&apos;s talk
                             </p>
-                            <h2 className="max-w-[420px] text-[42px] leading-[0.98] font-bold tracking-[-0.055em] sm:text-[58px]">
+                            <h2 className="max-w-[420px] text-[44px] leading-[0.98] font-bold tracking-[-0.055em] sm:text-[64px]">
                                 Book an appointment.
                             </h2>
                             <p className="mt-6 max-w-[400px] text-base leading-7 text-white/70">
@@ -69,7 +70,7 @@ function Appointment() {
                                 />
                                 <Detail
                                     label="Availability"
-                                    value="Sunday — Thursday, 10am — 6pm"
+                                    value={"Sunday \u2014 Thursday, 10am \u2014 6pm"}
                                     icon={
                                         <svg className="size-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
                                             <path d="M4 4h16v16H4V4Zm0 5h16M8 2v4m8-4v4m-7 7h2m3 0h2m-7 3h2" />
@@ -127,12 +128,13 @@ function Appointment() {
                             </label>
                         </div>
 
-                        <button
-                            className="mt-7 inline-flex min-h-13 w-full items-center justify-center bg-red-600 px-7 text-base font-bold text-white transition-colors hover:bg-red-700 sm:w-auto"
+                        <Button
+                            as="button"
+                            className="mt-7 min-h-13 w-full px-7 sm:w-auto"
                             type="submit"
                         >
                             Request appointment
-                        </button>
+                        </Button>
                     </form>
                 </div>
             </div>

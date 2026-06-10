@@ -16,12 +16,8 @@ const navigation = [
         href: "#process",
     },
     {
-        label: "About",
-        href: "#about",
-    },
-    {
-        label: "Careers",
-        href: "#careers",
+        label: "Reviews",
+        href: "#reviews",
     },
     {
         label: "Contact",

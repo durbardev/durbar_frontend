@@ -88,7 +88,7 @@ function Services() {
                             {services.eyebrow}
                         </p>
                         <h2 className="text-[44px] leading-[0.98] font-bold tracking-[-0.055em] sm:text-[64px]">
-                            Our Services
+                            {services.title}
                         </h2>
                         <p className="mt-6 max-w-[440px] text-base leading-7 text-white/50">
                             {services.description}

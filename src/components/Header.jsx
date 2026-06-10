@@ -62,11 +62,9 @@ function Header() {
                     }`}
                     aria-label="Primary navigation"
                 >
-                    {navigation.slice(0, -1).map(({ label, href }, index) => (
+                    {navigation.slice(0, -1).map(({ label, href }) => (
                         <a
-                            className={`px-[15px] py-3 text-base font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white max-[900px]:px-3 max-[900px]:py-[13px] ${
-                                index === 0 ? "bg-white/10 text-white" : ""
-                            }`}
+                            className="px-[15px] py-3 text-base font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white max-[900px]:px-3 max-[900px]:py-[13px]"
                             href={href}
                             key={label}
                             onClick={() => setIsMenuOpen(false)}

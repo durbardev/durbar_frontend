@@ -118,7 +118,7 @@ function Process() {
                         <span className="h-px w-8 bg-red-600" />
                         {process.eyebrow}
                     </p>
-                    <h2 className="text-[42px] leading-[1.02] font-bold tracking-[-0.055em] sm:text-[60px]">
+                    <h2 className="text-[44px] leading-[0.98] font-bold tracking-[-0.055em] sm:text-[64px]">
                         {process.title}
                     </h2>
                     <p className="mt-5 max-w-[500px] text-base leading-7 text-white/50">

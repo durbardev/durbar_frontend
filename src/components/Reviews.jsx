@@ -1,6 +1,5 @@
 import reviews from "../data/reviews";
 import PrimaryButton from "./PrimaryButton";
-import SecondaryButton from "./SecondaryButton";
 
 function Avatar({ review, small = false }) {
     return (
@@ -17,7 +16,7 @@ function Avatar({ review, small = false }) {
 function Stars() {
     return (
         <span className="tracking-[0.12em] text-red-500" aria-label="5 out of 5 stars">
-            ★★★★★
+            {"\u2605\u2605\u2605\u2605\u2605"}
         </span>
     );
 }
@@ -38,7 +37,9 @@ function ReviewCard({ review, featured = false }) {
                     featured ? "text-xl sm:text-2xl" : "text-base"
                 }`}
             >
-                “{review.quote}”
+                {"\u201C"}
+                {review.quote}
+                {"\u201D"}
             </blockquote>
             <div className="mt-auto flex items-center gap-3 pt-8">
                 <Avatar review={review} />
@@ -86,9 +87,8 @@ function Reviews() {
                                 already trust our services.
                             </p>
                         </div>
-                        <div className="mt-6 flex flex-wrap gap-3">
+                        <div className="mt-6">
                             <PrimaryButton href="#contact">Start a project</PrimaryButton>
-                            <SecondaryButton href="#reviews">Read more reviews</SecondaryButton>
                         </div>
                     </div>
                 </div>
