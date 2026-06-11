@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-function SecondaryButton({ children, className = "", href = "#", ...props }) {
+function SecondaryButton({ children, className = "", href, ...props }) {
     return (
         <Button
             className={className}

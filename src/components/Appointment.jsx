@@ -1,5 +1,5 @@
 import identity from "../data/identity";
-import Button from "./Button";
+import PrimaryButton from "./PrimaryButton";
 
 const fieldClass =
     "min-h-13 w-full border border-white/10 bg-white/[0.035] px-4 text-base text-white outline-none transition-colors placeholder:text-white/25 focus:border-red-600";
@@ -24,7 +24,7 @@ function Appointment() {
     return (
         <section
             id="contact"
-            className="overflow-hidden bg-[#171717] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-28"
+            className="overflow-hidden bg-[#171717] px-5 pt-28 pb-20 text-white sm:px-8 sm:pt-20 lg:px-12 lg:py-28"
         >
             <div className="mx-auto max-w-[1320px]">
                 <div className="grid shadow-[0_28px_80px_rgba(0,0,0,0.28)] lg:grid-cols-[0.78fr_1.22fr]">
@@ -128,13 +128,13 @@ function Appointment() {
                             </label>
                         </div>
 
-                        <Button
+                        <PrimaryButton
                             as="button"
                             className="mt-7 min-h-13 w-full px-7 sm:w-auto"
                             type="submit"
                         >
                             Request appointment
-                        </Button>
+                        </PrimaryButton>
                     </form>
                 </div>
             </div>

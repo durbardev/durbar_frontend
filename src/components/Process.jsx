@@ -110,7 +110,7 @@ function Process() {
     return (
         <section
             id="process"
-            className="overflow-hidden bg-[#171717] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-28"
+            className="overflow-hidden bg-[#171717] px-5 pt-28 pb-20 text-white sm:px-8 sm:pt-20 lg:px-12 lg:py-28"
         >
             <div className="mx-auto max-w-[1320px]">
                 <div className="max-w-[560px]">

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Menu } from "lucide-react";
 import identity from "../data/identity";
 import navigation from "../data/navigation";
 import PrimaryButton from "./PrimaryButton";
@@ -41,7 +42,7 @@ function Header() {
 
     return (
         <header
-            className={`fixed inset-x-0 top-0 z-50 transition-all duration-200 max-[900px]:p-3 ${
+            className={`fixed inset-x-0 top-0 z-50 transition-all duration-200 max-[900px]:!p-3 ${
                 isScrolled
                     ? "bg-black px-8 py-2.5 shadow-[0_1px_0_rgba(255,255,255,0.08)]"
                     : "bg-transparent px-8 py-[18px]"
@@ -81,17 +82,22 @@ function Header() {
                     >
                         Contact Us
                     </PrimaryButton>{" "}
-                    <button
-                        className="hidden size-[42px] cursor-pointer rounded-none border-0 bg-red-600 p-2.5 max-[900px]:block"
-                        type="button"
-                        aria-label="Toggle navigation"
-                        aria-expanded={isMenuOpen}
-                        onClick={() => setIsMenuOpen((open) => !open)}
-                    >
-                        <span className="my-1 block h-0.5 bg-white" />
-                        <span className="my-1 block h-0.5 bg-white" />
-                        <span className="my-1 block h-0.5 bg-white" />
-                    </button>
+                    <div className="hidden max-[900px]:block">
+                        <PrimaryButton
+                            as="button"
+                            className="size-[42px] rounded-none border-0 p-2.5"
+                            type="button"
+                            aria-label="Toggle navigation"
+                            aria-expanded={isMenuOpen}
+                            onClick={() => setIsMenuOpen((open) => !open)}
+                        >
+                            <Menu
+                                className="size-6 shrink-0 stroke-white"
+                                strokeWidth={2}
+                                aria-hidden="true"
+                            />
+                        </PrimaryButton>
+                    </div>
                 </div>
             </div>
         </header>

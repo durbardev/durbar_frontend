@@ -141,7 +141,7 @@ function ProjectCard({ project, height }) {
 
 function Portfolio() {
     return (
-        <section id="work" className="bg-[#171717] px-5 py-20 text-white sm:px-8 lg:px-12 lg:py-28">
+        <section id="work" className="bg-[#171717] px-5 pt-28 pb-20 text-white sm:px-8 sm:pt-20 lg:px-12 lg:py-28">
             <div className="mx-auto max-w-[1320px]">
                 <header className="mx-auto mb-12 max-w-[720px] text-center">
                     <div>

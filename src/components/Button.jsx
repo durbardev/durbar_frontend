@@ -12,7 +12,7 @@ function Button({
 }) {
     return (
         <Component
-            className={`inline-flex min-h-[42px] items-center justify-center px-6 text-base font-bold transition-colors ${variants[variant]} ${className}`}
+            className={`inline-flex min-h-[42px] cursor-pointer items-center justify-center px-6 text-base font-bold transition-colors ${variants[variant]} ${className}`}
             {...props}
         >
             {children}
