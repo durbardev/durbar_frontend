@@ -30,12 +30,16 @@ function Appointment() {
             <div className="mx-auto max-w-[1320px]">
                 <div className="grid shadow-[0_28px_80px_rgba(0,0,0,0.28)] lg:grid-cols-[0.78fr_1.22fr]">
                     <div className="relative overflow-hidden bg-red-600/85 p-7 sm:p-10 lg:p-12">
-                        <span
-                            className="pointer-events-none absolute -right-8 -bottom-28 text-[310px] leading-none font-bold tracking-[-0.14em] text-black/10"
+                        <svg
+                            className="pointer-events-none absolute -right-12 -bottom-20 size-[300px] fill-black/10"
+                            viewBox="0 0 24 24"
                             aria-hidden="true"
                         >
-                            D
-                        </span>
+                            <path
+                                fillRule="evenodd"
+                                d="M12 1.5A8.5 8.5 0 0 0 3.5 10C3.5 15.8 12 23 12 23s8.5-7.2 8.5-13A8.5 8.5 0 0 0 12 1.5Zm0 5A3.5 3.5 0 1 0 12 13.5 3.5 3.5 0 0 0 12 6.5Z"
+                            />
+                        </svg>
                         <div className="relative">
                             <p className="mb-5 flex items-center gap-3 text-sm font-semibold tracking-[0.22em] text-white/75 uppercase">
                                 <span className="h-px w-8 bg-white/70" />

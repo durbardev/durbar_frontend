@@ -2,6 +2,7 @@ import Appointment from "./components/Appointment";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import Offer from "./components/Offer";
 import Portfolio from "./components/Portfolio";
 import Process from "./components/Process";
 import Reviews from "./components/Reviews";
@@ -28,6 +29,9 @@ function App() {
 
             {/* Portfolio */}
             <Portfolio />
+
+            {/* Offer */}
+            <Offer />
 
             {/* Reviews */}
             <Reviews />
