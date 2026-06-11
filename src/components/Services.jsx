@@ -1,42 +1,19 @@
+import { Globe, Megaphone, Package, Smartphone } from "lucide-react";
 import services from "../data/services";
 
 const icons = {
-    web: (
-        <>
-            <rect x="3" y="5" width="26" height="20" rx="1" />
-            <path d="M3 10h26M8 7.5h.01m4 0h.01M11 29h10m-5-4v4M11 16l-4 3 4 3m10-6 4 3-4 3" />
-        </>
-    ),
-    mobile: (
-        <>
-            <rect x="8" y="2.5" width="16" height="27" rx="2" />
-            <path d="M8 7h16M8 24.5h16M14 27h4m-2-16v9m-4-5h8" />
-        </>
-    ),
-    marketing: (
-        <>
-            <path d="M4 18v-6l18-7v20L4 18Zm18-8 6-2v14l-6-2M8 19v8h7l-2.5-6.5" />
-            <path d="M4 12v6" />
-        </>
-    ),
-    package: (
-        <>
-            <path d="m4 10 12-6 12 6-12 6-12-6Zm0 0v13l12 6 12-6V10M16 16v13" />
-            <path d="m10 7 12 6v7" />
-        </>
-    ),
+    web: Globe,
+    mobile: Smartphone,
+    marketing: Megaphone,
+    package: Package,
 };
 
 function ServiceIcon({ type }) {
+    const Icon = icons[type];
+
     return (
         <span className="grid size-14 place-items-center bg-red-600 text-white transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105">
-            <svg
-                className="size-7 fill-none stroke-current stroke-[1.5] [stroke-linecap:square] [stroke-linejoin:miter]"
-                viewBox="0 0 32 32"
-                aria-hidden="true"
-            >
-                {icons[type]}
-            </svg>
+            <Icon className="size-7" strokeWidth={1.5} aria-hidden="true" />
         </span>
     );
 }

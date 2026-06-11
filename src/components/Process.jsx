@@ -1,34 +1,20 @@
+import { BadgeCheck, Rocket, Search, WandSparkles } from "lucide-react";
 import process from "../data/process";
 import PrimaryButton from "./PrimaryButton";
 
 const icons = [
-    <>
-        <circle cx="14" cy="14" r="7" />
-        <path d="m19 19 6 6M14 10v8m-4-4h8" />
-    </>,
-    <>
-        <path d="M5 23 18 10l4 4L9 27l-5 1 1-5Zm10-10 4 4M5 8h6M8 5v6m14 10h6m-3-3v6" />
-    </>,
-    <>
-        <path d="M5 16.5 12 23l15-15" />
-        <path d="M26 16v11H5V6h15" />
-    </>,
-    <>
-        <path d="m6 25 5-1 13-13-4-4L7 20l-1 5Zm14-18 3-3 4 4-3 3M12 19l-3-3" />
-        <path d="M17 22h10M22 17v10" />
-    </>,
+    Search,
+    WandSparkles,
+    BadgeCheck,
+    Rocket,
 ];
 
 function ProcessIcon({ index }) {
+    const Icon = icons[index];
+
     return (
         <span className="grid size-12 place-items-center bg-red-600 text-white">
-            <svg
-                className="size-6 fill-none stroke-current stroke-[1.7] [stroke-linecap:square] [stroke-linejoin:miter]"
-                viewBox="0 0 32 32"
-                aria-hidden="true"
-            >
-                {icons[index]}
-            </svg>
+            <Icon className="size-6" strokeWidth={1.7} aria-hidden="true" />
         </span>
     );
 }

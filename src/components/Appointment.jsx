@@ -1,3 +1,4 @@
+import { CalendarDays, Mail, Phone } from "lucide-react";
 import identity from "../data/identity";
 import PrimaryButton from "./PrimaryButton";
 
@@ -53,29 +54,17 @@ function Appointment() {
                                 <Detail
                                     label="Email us"
                                     value={identity.email}
-                                    icon={
-                                        <svg className="size-5 fill-current" viewBox="0 0 24 24">
-                                            <path d="M2 5h20v14H2V5Zm2.3 2 7.7 5.4L19.7 7H4.3ZM20 9.2l-8 5.6-8-5.6V17h16V9.2Z" />
-                                        </svg>
-                                    }
+                                    icon={<Mail className="size-5" aria-hidden="true" />}
                                 />
                                 <Detail
                                     label="Call us"
                                     value={identity.phone}
-                                    icon={
-                                        <svg className="size-5 fill-current" viewBox="0 0 24 24">
-                                            <path d="M6.6 2 11 6.4 8.4 9a15.5 15.5 0 0 0 6.6 6.6l2.6-2.6 4.4 4.4-2.1 3.3c-.5.8-1.5 1.2-2.4 1C9.7 20 4 14.3 2.3 6.5c-.2-.9.2-1.9 1-2.4L6.6 2Z" />
-                                        </svg>
-                                    }
+                                    icon={<Phone className="size-5" aria-hidden="true" />}
                                 />
                                 <Detail
                                     label="Availability"
                                     value={"Sunday \u2014 Thursday, 10am \u2014 6pm"}
-                                    icon={
-                                        <svg className="size-5 fill-none stroke-current stroke-2" viewBox="0 0 24 24">
-                                            <path d="M4 4h16v16H4V4Zm0 5h16M8 2v4m8-4v4m-7 7h2m3 0h2m-7 3h2" />
-                                        </svg>
-                                    }
+                                    icon={<CalendarDays className="size-5" aria-hidden="true" />}
                                 />
                             </div>
                         </div>
