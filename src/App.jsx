@@ -20,11 +20,11 @@ function App() {
             {/* Trusted Brands */}
             <TrustedBrands />
 
-            {/* Process */}
-            <Process />
-
             {/* Services */}
             <Services />
+
+            {/* Process */}
+            <Process />
 
             {/* Portfolio */}
             <Portfolio />

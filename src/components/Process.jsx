@@ -38,7 +38,7 @@ function DesktopProcess() {
         "left-[2%] top-[48%]",
         "left-[27%] top-[32%]",
         "left-[52%] top-[22%]",
-        "right-[0%] top-[0%]",
+        "left-[77%] top-[0%]",
     ];
 
     return (
@@ -110,7 +110,7 @@ function Process() {
     return (
         <section
             id="process"
-            className="overflow-hidden bg-[#171717] px-5 pt-28 pb-20 text-white sm:px-8 sm:pt-20 lg:px-12 lg:py-28"
+            className="overflow-hidden bg-black px-5 pt-28 pb-20 text-white sm:px-8 sm:pt-20 lg:px-12 lg:py-28"
         >
             <div className="mx-auto max-w-[1320px]">
                 <div className="max-w-[560px]">

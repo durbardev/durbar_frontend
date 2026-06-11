@@ -125,16 +125,24 @@ function ProjectCard({ project, height }) {
             className="group relative mb-5 break-inside-avoid overflow-hidden bg-[#111]"
             style={{ height }}
         >
-            <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.025]">
-                <ProjectVisual variant={project.variant} />
-            </div>
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/75 to-transparent p-6 pt-20">
-                <div className="mb-2 flex justify-between gap-4 text-xs font-semibold tracking-[0.16em] text-white/50 uppercase">
-                    <span>{project.category}</span>
-                    <span>{project.year}</span>
+            <a
+                className="absolute inset-0 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-red-600"
+                href={project.url ?? "#work"}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open ${project.title} in a new tab`}
+            >
+                <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.025]">
+                    <ProjectVisual variant={project.variant} />
                 </div>
-                <h3 className="text-[28px] font-bold tracking-[-0.045em]">{project.title}</h3>
-            </div>
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/75 to-transparent p-6 pt-20">
+                    <div className="mb-2 flex justify-between gap-4 text-xs font-semibold tracking-[0.16em] text-white/50 uppercase">
+                        <span>{project.category}</span>
+                        <span>{project.year}</span>
+                    </div>
+                    <h3 className="text-[28px] font-bold tracking-[-0.045em]">{project.title}</h3>
+                </div>
+            </a>
         </article>
     );
 }
