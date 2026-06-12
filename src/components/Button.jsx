@@ -12,10 +12,10 @@ function Button({
 }) {
     return (
         <Component
-            className={`inline-flex min-h-[42px] cursor-pointer items-center justify-center px-6 text-base font-bold transition-colors ${variants[variant]} ${className}`}
+            className={`button-motion relative inline-flex min-h-[42px] cursor-pointer items-center justify-center overflow-hidden px-6 text-base font-bold ${variants[variant]} ${className}`}
             {...props}
         >
-            {children}
+            <span className="relative z-10 inline-flex items-center gap-3">{children}</span>
         </Component>
     );
 }

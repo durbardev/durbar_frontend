@@ -21,7 +21,8 @@ function ServiceIcon({ type }) {
 function ServiceCard({ service, index, className = "" }) {
     return (
         <article
-            className={`group relative flex min-h-[260px] flex-col overflow-hidden border border-white/10 bg-[#111] p-7 transition-colors duration-300 hover:bg-[#171717] sm:p-8 ${className}`}
+            className={`service-card-${index + 1} group relative flex min-h-[260px] flex-col overflow-hidden border border-white/10 bg-[#111] p-7 transition-colors duration-300 hover:bg-[#171717] sm:p-8 ${className}`}
+            data-reveal
         >
             <span
                 className="pointer-events-none absolute -top-10 -right-4 text-[190px] leading-none font-bold tracking-[-0.1em] text-red-600/30 transition-colors duration-500 group-hover:text-red-600/50 sm:text-[240px]"
@@ -59,7 +60,7 @@ function Services() {
         >
             <div className="mx-auto max-w-[1320px]">
                 <div className="grid gap-5 lg:grid-cols-12 lg:grid-rows-[auto_1fr]">
-                    <header className="pb-8 lg:col-span-5 lg:pr-10">
+                    <header className="pb-8 lg:col-span-5 lg:pr-10" data-reveal>
                         <p className="mb-4 flex items-center gap-3 text-sm font-semibold tracking-[0.22em] text-red-500 uppercase">
                             <span className="h-px w-8 bg-red-600" />
                             {services.eyebrow}

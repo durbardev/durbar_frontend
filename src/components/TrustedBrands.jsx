@@ -7,8 +7,9 @@ function TrustedBrands() {
                 <div className="grid grid-cols-2 border border-white/10 sm:grid-cols-3 lg:grid-cols-6">
                     {trustedBrands.map((brand) => (
                         <div
-                            className="grid min-h-28 place-items-center border-r border-b border-white/10 px-6 transition-colors hover:bg-white/5"
+                            className="brand-tile grid min-h-28 place-items-center border-r border-b border-white/10 px-6 transition-colors hover:bg-white/5"
                             key={brand.label}
+                            data-reveal
                         >
                             <img
                                 className="max-h-8 w-full object-contain opacity-60 transition-opacity hover:opacity-100"

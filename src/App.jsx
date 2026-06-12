@@ -8,8 +8,11 @@ import Process from "./components/Process";
 import Reviews from "./components/Reviews";
 import Services from "./components/Services";
 import TrustedBrands from "./components/TrustedBrands";
+import useScrollReveal from "./hooks/useScrollReveal";
 
 function App() {
+    useScrollReveal();
+
     return (
         <div className="flex min-h-screen flex-col">
             {/* Header */}

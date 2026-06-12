@@ -28,7 +28,7 @@ function DesktopProcess() {
     ];
 
     return (
-        <div className="relative hidden min-h-[560px] lg:block">
+        <div className="relative hidden min-h-[560px] lg:block" data-reveal>
             <svg
                 className="absolute inset-x-0 top-14 h-[360px] w-full overflow-visible"
                 viewBox="0 0 1200 360"
@@ -36,6 +36,7 @@ function DesktopProcess() {
                 aria-hidden="true"
             >
                 <path
+                    className="process-line"
                     d="M0 280C125 360 175 340 270 225S465 140 610 170 760 220 850 80 1045 20 1200 42"
                     fill="none"
                     stroke="rgb(220 38 38)"
@@ -46,8 +47,9 @@ function DesktopProcess() {
 
             {process.steps.map((step, index) => (
                 <article
-                    className={`absolute w-[275px] bg-[#101010] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.28)] ${positions[index]}`}
+                    className={`process-card absolute w-[275px] bg-[#101010] p-6 shadow-[0_18px_45px_rgba(0,0,0,0.28)] ${positions[index]}`}
                     key={step.title}
+                    style={{ "--step-delay": `${index * 240 + 1650}ms` }}
                 >
                     <div className="relative">
                         <div className="mb-6 flex items-start justify-between">
@@ -73,7 +75,7 @@ function MobileProcess() {
     return (
         <div className="relative mt-12 grid gap-10 border-l border-red-600/40 pl-8 lg:hidden">
             {process.steps.map((step, index) => (
-                <article className="relative bg-[#101010] p-6" key={step.title}>
+                <article className="relative bg-[#101010] p-6" key={step.title} data-reveal>
                     <div className="mb-6 flex items-start justify-between">
                         <ProcessIcon index={index} />
                         <span className="text-5xl leading-none font-bold text-white/8">
@@ -99,7 +101,7 @@ function Process() {
             className="overflow-hidden bg-black px-5 pt-28 pb-20 text-white sm:px-8 sm:pt-20 lg:px-12 lg:py-28"
         >
             <div className="mx-auto max-w-[1320px]">
-                <div className="max-w-[560px]">
+                <div className="max-w-[560px]" data-reveal>
                     <p className="mb-4 flex items-center gap-3 text-sm font-semibold tracking-[0.22em] text-red-500 uppercase">
                         <span className="h-px w-8 bg-red-600" />
                         {process.eyebrow}

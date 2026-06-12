@@ -119,11 +119,11 @@ function ProjectVisual({ variant }) {
     );
 }
 
-function ProjectCard({ project, height }) {
+function ProjectCard({ project, height, index }) {
     return (
         <article
-            className="group relative mb-5 break-inside-avoid overflow-hidden bg-[#111]"
-            style={{ height }}
+            className="project-card group relative mb-5 break-inside-avoid overflow-hidden bg-[#111]"
+            style={{ height, "--project-delay": `${index * 160}ms` }}
         >
             <a
                 className="absolute inset-0 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-red-600"
@@ -151,7 +151,7 @@ function Portfolio() {
     return (
         <section id="work" className="bg-[#171717] px-5 pt-28 pb-20 text-white sm:px-8 sm:pt-20 lg:px-12 lg:py-28">
             <div className="mx-auto max-w-[1320px]">
-                <header className="mx-auto mb-12 max-w-[720px] text-center">
+                <header className="mx-auto mb-12 max-w-[720px] text-center" data-reveal>
                     <div>
                         <p className="mb-4 flex items-center justify-center gap-3 text-sm font-semibold tracking-[0.22em] text-red-500 uppercase">
                             <span className="h-px w-8 bg-red-600" />
@@ -164,13 +164,13 @@ function Portfolio() {
                 </header>
 
                 <div className="relative">
-                    <div className="columns-1 gap-5 md:columns-2 lg:columns-3">
-                        <ProjectCard project={portfolio.projects[0]} height={470} />
-                        <ProjectCard project={portfolio.projects[1]} height={340} />
-                        <ProjectCard project={portfolio.projects[2]} height={390} />
-                        <ProjectCard project={portfolio.projects[3]} height={520} />
-                        <ProjectCard project={portfolio.projects[4]} height={350} />
-                        <ProjectCard project={portfolio.projects[5]} height={440} />
+                    <div className="project-grid columns-1 gap-5 md:columns-2 lg:columns-3" data-reveal>
+                        <ProjectCard project={portfolio.projects[0]} height={470} index={0} />
+                        <ProjectCard project={portfolio.projects[1]} height={340} index={1} />
+                        <ProjectCard project={portfolio.projects[2]} height={390} index={2} />
+                        <ProjectCard project={portfolio.projects[3]} height={520} index={3} />
+                        <ProjectCard project={portfolio.projects[4]} height={350} index={4} />
+                        <ProjectCard project={portfolio.projects[5]} height={440} index={5} />
                     </div>
                 </div>
             </div>

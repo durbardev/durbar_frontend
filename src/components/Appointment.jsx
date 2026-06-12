@@ -3,11 +3,14 @@ import identity from "../data/identity";
 import PrimaryButton from "./PrimaryButton";
 
 const fieldClass =
-    "min-h-13 w-full border border-white/10 bg-white/[0.035] px-4 text-base text-white outline-none transition-colors placeholder:text-white/25 focus:border-red-600";
+    "contact-input min-h-13 w-full border border-white/10 bg-white/[0.035] px-4 text-base text-white outline-none placeholder:text-white/25 focus:border-red-600";
 
-function Detail({ icon, label, value }) {
+function Detail({ icon, label, value, index }) {
     return (
-        <div className="flex gap-4 border-t border-white/20 py-5">
+        <div
+            className="contact-detail flex gap-4 border-t border-white/20 py-5"
+            style={{ "--contact-delay": `${450 + index * 150}ms` }}
+        >
             <span className="grid size-11 shrink-0 place-items-center bg-black/15 text-white">
                 {icon}
             </span>
@@ -29,9 +32,9 @@ function Appointment() {
         >
             <div className="mx-auto max-w-[1320px]">
                 <div className="grid shadow-[0_28px_80px_rgba(0,0,0,0.28)] lg:grid-cols-[0.78fr_1.22fr]">
-                    <div className="relative overflow-hidden bg-red-600/85 p-7 sm:p-10 lg:p-12">
+                    <div className="contact-info relative overflow-hidden bg-red-600/85 p-7 sm:p-10 lg:p-12" data-reveal>
                         <svg
-                            className="pointer-events-none absolute -right-12 -bottom-20 size-[300px] fill-black/10"
+                            className="contact-pin pointer-events-none absolute -right-12 -bottom-20 size-[300px] fill-black/10"
                             viewBox="0 0 24 24"
                             aria-hidden="true"
                         >
@@ -56,16 +59,19 @@ function Appointment() {
 
                             <div className="mt-12">
                                 <Detail
+                                    index={0}
                                     label="Email us"
                                     value={identity.email}
                                     icon={<Mail className="size-5" aria-hidden="true" />}
                                 />
                                 <Detail
+                                    index={1}
                                     label="Call us"
                                     value={identity.phone}
                                     icon={<Phone className="size-5" aria-hidden="true" />}
                                 />
                                 <Detail
+                                    index={2}
                                     label="Availability"
                                     value={"Sunday \u2014 Thursday, 10am \u2014 6pm"}
                                     icon={<CalendarDays className="size-5" aria-hidden="true" />}
@@ -74,7 +80,7 @@ function Appointment() {
                         </div>
                     </div>
 
-                    <form className="bg-[#0f0f0f] p-7 sm:p-10 lg:p-12">
+                    <form className="contact-form bg-[#0f0f0f] p-7 sm:p-10 lg:p-12" data-reveal>
                         <div className="mb-10">
                             <div>
                                 <p className="flex items-center gap-3 text-sm font-semibold tracking-[0.2em] text-red-500 uppercase">
@@ -88,15 +94,15 @@ function Appointment() {
                         </div>
 
                         <div className="grid gap-5 sm:grid-cols-2">
-                            <label className="grid gap-2 text-sm font-semibold text-white/60">
+                            <label className="contact-field grid gap-2 text-sm font-semibold text-white/60">
                                 Your name
                                 <input className={fieldClass} type="text" placeholder="Full name" />
                             </label>
-                            <label className="grid gap-2 text-sm font-semibold text-white/60">
+                            <label className="contact-field grid gap-2 text-sm font-semibold text-white/60">
                                 Work email
                                 <input className={fieldClass} type="email" placeholder="you@company.com" />
                             </label>
-                            <label className="grid gap-2 text-sm font-semibold text-white/60">
+                            <label className="contact-field grid gap-2 text-sm font-semibold text-white/60">
                                 Service needed
                                 <select className={fieldClass} defaultValue="">
                                     <option value="" disabled className="bg-[#111]">
@@ -108,11 +114,11 @@ function Appointment() {
                                     <option className="bg-[#111]">Full Package</option>
                                 </select>
                             </label>
-                            <label className="grid gap-2 text-sm font-semibold text-white/60">
+                            <label className="contact-field grid gap-2 text-sm font-semibold text-white/60">
                                 Preferred date
                                 <input className={`${fieldClass} [color-scheme:dark]`} type="date" />
                             </label>
-                            <label className="grid gap-2 text-sm font-semibold text-white/60 sm:col-span-2">
+                            <label className="contact-field grid gap-2 text-sm font-semibold text-white/60 sm:col-span-2">
                                 Tell us about your project
                                 <textarea
                                     className={`${fieldClass} min-h-36 resize-none py-4`}

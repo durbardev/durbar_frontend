@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import reviews from "../data/reviews";
 import PrimaryButton from "./PrimaryButton";
 
@@ -21,12 +22,62 @@ function Stars() {
     );
 }
 
+function TypingQuote({ quote }) {
+    const text = `\u201C${quote}\u201D`;
+    const containerRef = useRef(null);
+    const [visibleLength, setVisibleLength] = useState(0);
+
+    useEffect(() => {
+        const element = containerRef.current;
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (!element || prefersReducedMotion || !("IntersectionObserver" in window)) {
+            setVisibleLength(text.length);
+            return undefined;
+        }
+
+        let typingTimer;
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (!entry.isIntersecting) return;
+
+                observer.disconnect();
+                let nextLength = 0;
+                typingTimer = window.setInterval(() => {
+                    nextLength += 1;
+                    setVisibleLength(nextLength);
+
+                    if (nextLength >= text.length) {
+                        window.clearInterval(typingTimer);
+                    }
+                }, 18);
+            },
+            { threshold: 0.25 },
+        );
+
+        observer.observe(element);
+
+        return () => {
+            observer.disconnect();
+            window.clearInterval(typingTimer);
+        };
+    }, [text]);
+
+    return (
+        <span ref={containerRef} aria-hidden="true">
+            {text.slice(0, visibleLength)}
+            {visibleLength < text.length && <span className="review-typing-caret" />}
+        </span>
+    );
+}
+
 function ReviewCard({ review, featured = false }) {
     return (
         <article
             className={`flex flex-col bg-[#111] p-6 transition-colors duration-300 hover:bg-[#151515] ${
                 featured ? "min-h-[470px] sm:p-8" : "min-h-[220px]"
             }`}
+            data-reveal
         >
             <div className="flex items-center justify-between gap-4 text-xs text-white/25">
                 <Stars />
@@ -36,10 +87,9 @@ function ReviewCard({ review, featured = false }) {
                 className={`mt-6 leading-relaxed tracking-[-0.02em] text-white/75 ${
                     featured ? "text-xl sm:text-2xl" : "text-base"
                 }`}
+                aria-label={`\u201C${review.quote}\u201D`}
             >
-                {"\u201C"}
-                {review.quote}
-                {"\u201D"}
+                <TypingQuote quote={review.quote} />
             </blockquote>
             <div className="mt-auto flex items-center gap-3 pt-8">
                 <Avatar review={review} />
@@ -59,7 +109,7 @@ function Reviews() {
             className="overflow-hidden bg-black px-5 pt-28 pb-20 text-white sm:px-8 sm:pt-20 lg:px-12 lg:py-28"
         >
             <div className="mx-auto max-w-[1320px]">
-                <div className="mb-14 grid gap-10 lg:grid-cols-[0.8fr_1fr] lg:items-end">
+                <div className="mb-14 grid gap-10 lg:grid-cols-[0.8fr_1fr] lg:items-end" data-reveal>
                     <div>
                         <p className="mb-5 flex items-center gap-3 text-sm font-semibold tracking-[0.22em] text-red-500 uppercase">
                             <span className="h-px w-8 bg-red-600" />
